@@ -1,0 +1,35 @@
+### Login
+POST http://localhost:8000/login
+Content-Type: application/json
+
+{
+	"email": "123@321.123",
+	"password": "11111"
+}
+
+### Register
+POST http://localhost:8000/register
+Content-Type: application/json
+
+{
+	"firstName": "elizabeth",
+	"lastName": "watson",
+	"email": "123@321.123",
+	"password": "11111"
+}
+
+### Register admin
+POST http://localhost:8000/registerAdmin
+Content-Type: application/json
+
+{
+	"firstName": "admin",
+	"lastName": "root",
+	"email": "ad@min.pro",
+	"password": "ruler",
+	"rootPassword": "murloc power"
+}
+
+### Logout
+POST http://localhost:8000/logout
+Content-Type: application/json

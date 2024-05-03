@@ -1,0 +1,30 @@
+### Get all users
+GET http://localhost:8000/getAll
+Content-Type: application/json
+
+### Get one user
+GET  http://localhost:8000/getOne/1
+Content-Type: application/json
+
+### Update
+PATCH http://localhost:8000/update
+Content-Type: application/json
+
+{
+	"firstName": "qweqwe",
+	"lastName": "qwewqe",
+	"email": "waaaa@awwww.xx",
+	"password": "11111",
+	"updateId": 1
+}
+
+### Delete
+DELETE http://localhost:8000/delete
+Content-Type: application/json
+
+{
+	"firstName": "elizabeth",
+	"lastName": "watson",
+	"email": "e@w.xx",
+	"password": "11111"
+}
