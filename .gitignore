@@ -2,3 +2,4 @@
 /dist
 /prisma/migrations
 nodemon.json
+.env
