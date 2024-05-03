@@ -1,3 +1,6 @@
+/**
+ * Data transfer object for user login and register
+ */
 export interface UserLoginDto {
 	email: string;
 	password: string;

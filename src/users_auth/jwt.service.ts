@@ -3,6 +3,9 @@ import { IJWTService, IUserPayload } from "./jwt.service.interface";
 import { sign, verify } from "jsonwebtoken";
 import "dotenv/config";
 
+/**
+ * Service for work with JWT
+ */
 @injectable()
 export class JWTService implements IJWTService {
 	async signAccessToken(

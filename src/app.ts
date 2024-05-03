@@ -8,12 +8,17 @@ import { TYPES } from "./types";
 import { UserAuthController } from "./users_auth/controller";
 import { UserCrudController } from "./users_crud/controller";
 
+/**
+ * Main application class
+ */
 @injectable()
 export class App {
 	app: Express;
 	server: Server | undefined;
 	port: number;
-
+	/**
+	 * Passing dependencies to the constructor
+	 */
 	constructor(
 		@inject(TYPES.UserAuthController)
 		private userController: UserAuthController,
@@ -35,6 +40,9 @@ export class App {
 		this.app.use("/", this.userCrudController.router);
 	}
 
+	/**
+	 * Start the server method, which called in main.ts file
+	 */
 	public async init(): Promise<void> {
 		this.useMiddleware();
 		this.useRoutes();

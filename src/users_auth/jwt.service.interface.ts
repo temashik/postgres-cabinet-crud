@@ -1,3 +1,6 @@
+/**
+ * Interface for JWT service
+ */
 export interface IJWTService {
 	signAccessToken: (
 		email: string,
@@ -13,6 +16,9 @@ export interface IJWTService {
 	verifyRefreshToken: (token: string) => IUserPayload | null;
 }
 
+/**
+ * Interface for payload from validating JWT
+ */
 export interface IUserPayload {
 	email: string;
 	id: string;

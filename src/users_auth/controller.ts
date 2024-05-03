@@ -9,6 +9,9 @@ import "dotenv/config";
 import { IUserAuthService } from "./service.interface";
 import { IJWTService } from "./jwt.service.interface";
 
+/**
+ * User auth controller
+ */
 @injectable()
 export class UserAuthController
 	extends BaseContorller
@@ -99,6 +102,9 @@ export class UserAuthController
 		}
 	}
 
+	/**
+	 * Register user with admin rights by passing root password in body
+	 */
 	async registerAdmin(
 		req: Request<{}, {}, AdminRegisterDto>,
 		res: Response,

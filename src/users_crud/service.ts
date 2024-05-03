@@ -5,6 +5,9 @@ import { IUpdateAnyUserData, IUserCrudService } from "./service.interface";
 import { PrismaClient } from "@prisma/client";
 import "dotenv/config";
 
+/**
+ * User CRUD service
+ */
 @injectable()
 export class UserCrudService implements IUserCrudService {
 	async getAll(): Promise<User[]> {

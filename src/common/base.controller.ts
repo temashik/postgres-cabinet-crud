@@ -3,6 +3,9 @@ import { injectable } from "inversify";
 import "reflect-metadata";
 import { IControllerRoute } from "./router.interface";
 
+/**
+ * Base class for all controllers
+ */
 @injectable()
 export abstract class BaseContorller {
 	private readonly _router: Router;

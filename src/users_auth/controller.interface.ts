@@ -1,5 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 
+/**
+ * Interface for user auth controller
+ */
 export interface IUserAuthController {
 	login: (req: Request, res: Response, next: NextFunction) => Promise<void>;
 	register: (

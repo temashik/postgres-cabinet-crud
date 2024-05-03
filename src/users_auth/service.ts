@@ -5,6 +5,9 @@ import { IUserAuthService } from "./service.interface";
 import { PrismaClient } from "@prisma/client";
 import "dotenv/config";
 
+/**
+ * User auth service
+ */
 @injectable()
 export class UserAuthService implements IUserAuthService {
 	async createUser({
@@ -45,6 +48,9 @@ export class UserAuthService implements IUserAuthService {
 		}
 	}
 
+	/**
+	 * Create user with admin rights
+	 */
 	async createAdmin({
 		firstName,
 		lastName,
