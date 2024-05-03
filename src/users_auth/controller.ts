@@ -7,14 +7,19 @@ import { IUserAuthController } from "./controller.interface";
 import { AdminRegisterDto, UserLoginDto, UserRegisterDto } from "./dto";
 import "dotenv/config";
 import { IUserAuthService } from "./service.interface";
+import { IJWTService } from "./jwt.service.interface";
 
+/**
+ * User auth controller
+ */
 @injectable()
 export class UserAuthController
 	extends BaseContorller
 	implements IUserAuthController
 {
 	constructor(
-		@inject(TYPES.UserAuthService) private userService: IUserAuthService
+		@inject(TYPES.UserAuthService) private userService: IUserAuthService,
+		@inject(TYPES.JWTService) private jwtService: IJWTService
 	) {
 		super();
 		this.bindRoutes([
@@ -45,12 +50,12 @@ export class UserAuthController
 				errorMessage: "Your email or password is invalid",
 			});
 		} else if (result.id) {
-			const accessToken = await this.userService.signAccessToken(
+			const accessToken = await this.jwtService.signAccessToken(
 				result.email,
 				result.id,
 				result.isAdmin
 			);
-			const refreshToken = await this.userService.signRefreshToken(
+			const refreshToken = await this.jwtService.signRefreshToken(
 				result.email,
 				result.id,
 				result.isAdmin
@@ -97,6 +102,9 @@ export class UserAuthController
 		}
 	}
 
+	/**
+	 * Register user with admin rights by passing root password in body
+	 */
 	async registerAdmin(
 		req: Request<{}, {}, AdminRegisterDto>,
 		res: Response,
@@ -130,7 +138,7 @@ export class UserAuthController
 			});
 			return;
 		}
-		const result = await this.userService.createUser(req.body);
+		const result = await this.userService.createAdmin(req.body);
 		if (!result) {
 			res.json({
 				errorMessage: "This email already registered",
@@ -142,7 +150,6 @@ export class UserAuthController
 			});
 		}
 	}
-
 	logout(req: Request, res: Response): void {
 		res.clearCookie("accessToken");
 		res.clearCookie("refreshToken");

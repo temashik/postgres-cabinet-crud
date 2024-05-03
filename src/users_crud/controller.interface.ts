@@ -1,5 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 
+/**
+ * Interface for user CRUD operations
+ */
 export interface IUserCrudController {
 	getAllForAdmin: (
 		req: Request,

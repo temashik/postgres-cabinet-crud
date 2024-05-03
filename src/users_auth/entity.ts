@@ -1,5 +1,8 @@
 import { hash, compare } from "bcryptjs";
 
+/**
+ * User entity
+ */
 export class User {
 	private _password: string | undefined;
 	constructor(
@@ -44,10 +47,16 @@ export class User {
 		else return "no password";
 	}
 
+	/**
+	 * Set hashed password in _password field
+	 */
 	public async setPassword(pass: string, salt: number): Promise<void> {
 		this._password = await hash(pass, salt);
 	}
 
+	/**
+	 * Compare provided password with hashed password
+	 */
 	public async comparePassword(pass: string): Promise<boolean> {
 		if (this._password) return compare(pass, this._password);
 		else return false;

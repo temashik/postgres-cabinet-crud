@@ -3,7 +3,7 @@ POST http://localhost:8000/login
 Content-Type: application/json
 
 {
-	"email": "123@321.123",
+	"email": "ro@ot.adm",
 	"password": "11111"
 }
 
@@ -12,9 +12,9 @@ POST http://localhost:8000/register
 Content-Type: application/json
 
 {
-	"firstName": "elizabeth",
-	"lastName": "watson",
-	"email": "123@321.123",
+	"firstName": "john",
+	"lastName": "doe",
+	"email": "anyone@unknown.spy",
 	"password": "11111"
 }
 
@@ -23,11 +23,11 @@ POST http://localhost:8000/registerAdmin
 Content-Type: application/json
 
 {
-	"firstName": "admin",
+	"firstName": "rooty",
 	"lastName": "root",
-	"email": "ad@min.pro",
-	"password": "ruler",
-	"rootPassword": "murloc power"
+	"email": "ro@ot.adm",
+	"password": "11111",
+	"rootPassword": "murloc_power"
 }
 
 ### Logout
