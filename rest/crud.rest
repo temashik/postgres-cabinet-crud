@@ -13,18 +13,31 @@ Content-Type: application/json
 {
 	"firstName": "qweqwe",
 	"lastName": "qwewqe",
-	"email": "waaaa@awwww.xx",
+	"email": "qweqwe@qwe.qwe",
 	"password": "11111",
-	"updateId": 1
+}
+
+### Update any user
+PATCH http://localhost:8000/updateAny
+Content-Type: application/json
+
+{
+	"firstName": "qweqwe",
+	"lastName": "qwewqe",
+	"email": "qweqwe@qwe.qwe",
+	"password": "11111",
+	"isAdmin": false,
+	"updateId": 13
 }
 
 ### Delete
 DELETE http://localhost:8000/delete
 Content-Type: application/json
 
+### Delete any user
+DELETE http://localhost:8000/deleteAny
+Content-Type: application/json
+
 {
-	"firstName": "elizabeth",
-	"lastName": "watson",
-	"email": "e@w.xx",
-	"password": "11111"
+	"deleteId": 11,
 }

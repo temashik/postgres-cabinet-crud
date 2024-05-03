@@ -3,6 +3,8 @@ import { App } from "./app";
 import { TYPES } from "./types";
 import { UserAuthController } from "./users_auth/controller";
 import { IUserAuthController } from "./users_auth/controller.interface";
+import { JWTService } from "./users_auth/jwt.service";
+import { IJWTService } from "./users_auth/jwt.service.interface";
 import { UserAuthService } from "./users_auth/service";
 import { IUserAuthService } from "./users_auth/service.interface";
 import { UserCrudController } from "./users_crud/controller";
@@ -29,6 +31,7 @@ export const appBindings = new ContainerModule((bind: interfaces.Bind) => {
 	bind<IUserCrudService>(TYPES.UserCrudService)
 		.to(UserCrudService)
 		.inSingletonScope();
+	bind<IJWTService>(TYPES.JWTService).to(JWTService);
 });
 
 async function bootstrap(): Promise<IBootstrapReturn> {

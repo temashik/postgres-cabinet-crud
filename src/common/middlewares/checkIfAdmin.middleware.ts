@@ -1,7 +1,7 @@
 import { IMiddleware } from "./middleware.interface";
 import { Request, Response, NextFunction } from "express";
 import { verify } from "jsonwebtoken";
-import { IUserPayload } from "../../users_auth/service.interface";
+import { IUserPayload } from "../../users_auth/jwt.service.interface";
 
 export class CheckIfAdmin implements IMiddleware {
 	execute(req: Request, res: Response, next: NextFunction): void {

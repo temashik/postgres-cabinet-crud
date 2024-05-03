@@ -1,17 +1,17 @@
-import { UserLoginDto, UserRegisterDto } from "../users_auth/dto";
 import { User } from "../users_auth/entity";
 
 export interface IUserCrudService {
 	getAll: () => Promise<User[]>;
 	getOne: (id: number) => Promise<User | null>;
-	updateUser: (
-		dto: UserRegisterDto,
-		updateId: number,
-		userId: number
-	) => Promise<boolean>;
-	deleteUser: (
-		deleteId: number,
-		userId: number,
-		isAdmin: boolean
-	) => Promise<boolean>;
+	updateUser: (dto: IUpdateAnyUserData) => Promise<boolean>;
+	deleteUser: (userId: number) => Promise<boolean>;
+}
+
+export interface IUpdateAnyUserData {
+	firstName: string;
+	lastName: string;
+	email: string;
+	password: string;
+	isAdmin: boolean;
+	updateId: number;
 }

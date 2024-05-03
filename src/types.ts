@@ -4,4 +4,5 @@ export const TYPES = {
 	UserAuthService: Symbol.for("UserAuthService"),
 	UserCrudController: Symbol.for("UserCrudController"),
 	UserCrudService: Symbol.for("UserCrudService"),
+	JWTService: Symbol.for("JWTService"),
 };
